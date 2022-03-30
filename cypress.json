@@ -1,0 +1,6 @@
+{
+    "integrationFolder": "cypress/tests",
+    "fixturesFolder": false,
+    "screenshotOnRunFailure": false,
+    "video": false
+  }
