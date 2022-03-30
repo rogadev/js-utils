@@ -7,7 +7,9 @@ import { randomNumberBetween } from './misc.js'
  * @returns the first element, or the first n number of elements, from an array.
  */
 export function first(array, n = 1) {
-  if (n !== 1) {
+  if (!Array.isArray(array)) {
+    throw new Error('first() requires an array as the first parameter.')
+  } else if (n !== 1) {
     n = Math.round(+n)
     return array.filter((_, i) => i < n)
   }
@@ -21,7 +23,9 @@ export function first(array, n = 1) {
  * @returns the last element, or the last n number of elements, from an array.
  */
 export function last(array, n = 1) {
-  if (n !== 1) {
+  if (!Array.isArray(array)) {
+    throw new Error('first() requires an array as the first parameter.')
+  } else if (n !== 1) {
     if (+n === NaN)
       throw new Error(
         `Invalid parameter type passed to last(). Expects type of Number, or type that can be cohersed to a Number, but instead received type '${typeof n}'.`
